@@ -14,8 +14,11 @@ Feature: HongKong Weather API - Current Weather Report (rhrread)
         Given params {dataType: "rhrread", lang: "en"}
         When method Get
         Then status 200
+
+        # Call common assertion steps defined in rhrreadCommonAssertions.feature file
         Then call read('classpath:Helpers/rhrreadCommonAssertions.feature')
 
+        # Validate places for each array
         And match response.rainfall.data..place == ['Central &amp; Western District', 'Eastern District', 'Kwai Tsing', 'Islands District', 'North District', 'Sai Kung', 'Sha Tin', 'Southern District', 'Tai Po', 'Tsuen Wan', 'Tuen Mun', 'Wan Chai', 'Yuen Long', 'Yau Tsim Mong', 'Sham Shui Po', 'Kowloon City', 'Wong Tai Sin', 'Kwun Tong']
         And match response.temperature.data..place == ["King's Park", "Hong Kong Observatory", "Wong Chuk Hang", "Ta Kwu Ling", "Lau Fau Shan", "Tai Po", "Sha Tin", "Tuen Mun", "Tseung Kwan O", "Sai Kung", "Cheung Chau", "Chek Lap Kok", "Tsing Yi", "Shek Kong", "Tsuen Wan Ho Koon", "Tsuen Wan Shing Mun Valley", "Hong Kong Park", "Shau Kei Wan", "Kowloon City", "Happy Valley", "Wong Tai Sin", "Stanley", "Kwun Tong", "Sham Shui Po", "Kai Tak Runway Park", "Yuen Long Park", "Tai Mei Tuk" ]
         And match response.humidity.data..place == ["Hong Kong Observatory"]
