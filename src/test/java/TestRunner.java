@@ -1,4 +1,4 @@
-package HkWeatherAPI;
+package Features.Task1_HkWeatherAPI;
 
 import com.intuit.karate.Results;
 import com.intuit.karate.Runner;
@@ -9,7 +9,7 @@ class TestRunner {
 
     @Test
     void testParallel() {
-        Results results = Runner.path("classpath:HkWeatherAPI")
+        Results results = Runner.path("classpath:Features")
                 .outputCucumberJson(true)
                 .parallel(5);
         assertEquals(0, results.getFailCount(), results.getErrorMessages());
