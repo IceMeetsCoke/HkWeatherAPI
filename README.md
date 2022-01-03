@@ -1,7 +1,7 @@
-# QA Automation Exercise - Task 1
+# QA Automation Exercise - Task 1 & Task 2
 
-This is a Behavior-Driven API test automation framework with the purpose of organising API tests efficiently and accurately.
-Karate is being used as the main technology due to its efficiency and powerful features. [Know more about Karate](https://github.com/karatelabs/karate)
+This is a Behavior-Driven test automation framework using Karate as the main technology, so that different kinds of tests could be managed in a clear, easy-understanding way..
+Karate is a powerful testing tool which provides great features on not only API testing, but also UI testing/Performance testing/Cli testing/Backend testing. [Know more about Karate](https://github.com/karatelabs/karate)
 
 
 ## Getting Started
@@ -22,7 +22,7 @@ Karate is being used as the main technology due to its efficiency and powerful f
 
 * Open VCS IDE -> open terminal -> navigate to the directory where you want to put the repository -> run below command:
 ```
-git clone https://github.com/IceMeetsCoke/HkWeatherAPI.git
+git clone https://github.com/IceMeetsCoke/QAExercise.git
 ```
 
 * After project is successfully imported -> open terminal -> navigate to your project folder -> run below maven command to run the test:
@@ -30,6 +30,10 @@ git clone https://github.com/IceMeetsCoke/HkWeatherAPI.git
 mvn clean test
 ```
 
-* The test is supposed to pass, and the html format test summary report is located at: .../target/karate-reports/karate-summary.html (you can right click the file and choose 'Open in default browser' to open it in browser)
 
+### Expected Results
+* Open the test summary report to check the results. Test summary report is located at: .../target/karate-reports/karate-summary.html (Find the file in the project structure and right click the file and choose 'Open in default browser' to open it in the default browser)
+
+* Task 1 is supposed to pass, the test includes assertion of the API response status code, dataTypes for each field, returned constant values, etc..
+* Task 2 is supossed to fail because there is no binary file given. However, the test codes is there to validate things such as the exitcode and the console output. 
 
