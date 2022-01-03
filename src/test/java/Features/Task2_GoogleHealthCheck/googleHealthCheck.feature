@@ -4,7 +4,12 @@ Feature: GoogleHealthCheck
 
 
     Scenario: Google Health Check
-    * def result = karate.fork("filePath\\binary.exe")
+    * def result = karate.fork("filePath\\binaryfile.exe")
     * result.waitSync()
     * match result.getExitCode() == 0
-    * match result.getSysOut() contains "It works!!!"
+    * def result = responseStatus != 200 ? {} : karate.call('classpath:Helpers/healthCheckSuccess.feature')
+    * def result = responseStatus == 200 ? {} : karate.call('classpath:Helpers/healthCheckNoSuccess.feature')
+    
+    
+
+
